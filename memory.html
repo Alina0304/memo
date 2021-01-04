@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h1>Мемоизация для чисел Фибоначи</h1>
+<input id="num" type="text" name="number"  value="Номер числа Фибоначи" />
+<input id="butOne" type="button" value='Вызов функции с одним аргументом'><br>
+<input type="text" id='rezult' value="0"><br>
+
+<h2>Мемоизация для функции сложения</h2>
+<input id="numAddA" type="text" name="first"  value="Первое слагаемое" />
+<input id="numAddB" type="text" name="second"  value="Второе слагаемое" />
+<input id="butTwo" type="button" value='Вызов функции с двумя аргументами'><br>
+<input type="text" id='rezultAdd' value="0"><br>
+
+</body>
+
+<script src="fibonachi.js"></script>
+<script src="memoizationFunc.js"></script>
+<script src="add.js"></script>
+
+<script>
+
+let fib=memoization(fibonachi);
+
+    butOne.onclick = function() {
+        document.getElementById("rezult").value=fib(Number(document.getElementById("num").value));
+    };
+
+let adding=memoization(add);
+    butTwo.onclick = function() {
+    document.getElementById("rezultAdd").value=adding(Number(document.getElementById("numAddA").value),Number(document.getElementById("numAddB").value));
+    };
+
+</script>
+
+</html>
